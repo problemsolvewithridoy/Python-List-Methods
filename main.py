@@ -17,3 +17,11 @@ class listfile:
             except Exception as e:
                 do.log_error("Error is happend")
                 do.log_exception("error is: %s", str(e))
+
+        def do_clear(self):
+            try:
+                del self.l[:]
+                do.log("after use clear function data is: %s",self.l)
+            except Exception as e:
+                do.log_error("Error is happened")
+                do.log_exception("error is %s", str(e))
