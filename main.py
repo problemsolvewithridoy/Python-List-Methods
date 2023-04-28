@@ -25,3 +25,11 @@ class listfile:
             except Exception as e:
                 do.log_error("Error is happened")
                 do.log_exception("error is %s", str(e))
+
+        def do_copy(self):
+            try:
+                a = self.l[:]
+                do.log("this is my new copy list data: %s", a)
+            except Exception as e:
+                do.log_error("Error is happend")
+                do.log_exception("error is %s", str(e))
