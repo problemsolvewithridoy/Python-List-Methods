@@ -46,3 +46,13 @@ class listfile:
             except Exception as e:
                 do.log_error("Error is Happend")
                 do.log_exception("error is: %s", str(e))
+
+        def do_extend(self,value):
+            try:
+                do.log("user want to extend: %s", value)
+                self.l[len(self.l):len(self.l)] = value
+                do.log("after extend data is: %s", self.l)
+
+            except Exception as e:
+                do.log_error("Error is Happend")
+                do.log_exception("error is: %s", str(e))
