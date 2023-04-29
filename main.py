@@ -33,3 +33,16 @@ class listfile:
             except Exception as e:
                 do.log_error("Error is happend")
                 do.log_exception("error is %s", str(e))
+
+        def do_count(self,value):
+            try:
+                do.log("user want to know how much: %s is here", value)
+                count = 0
+                for i in self.l:
+                    if i == value:
+                        count += 1
+                do.log("count result is: %s", count)
+
+            except Exception as e:
+                do.log_error("Error is Happend")
+                do.log_exception("error is: %s", str(e))
