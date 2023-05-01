@@ -56,3 +56,24 @@ class listfile:
             except Exception as e:
                 do.log_error("Error is Happend")
                 do.log_exception("error is: %s", str(e))
+
+        def do_index(self,value):
+            try:
+                do.log("user want to know %s value's index", value)
+                count = 0
+                if value in self.l:
+                    for i in self.l:
+                        count +=1
+                        if i == value:
+                            break
+                else:
+                    do.log("%s is not in list",value)
+                if count == 0:
+                    pass
+                else:
+                    do.log("Index number is %s",count-1)
+
+            except Exception as e:
+                do.log_error("Error is Happend")
+                do.log_exception("error is: %s", str(e))
+
