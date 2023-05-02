@@ -77,3 +77,13 @@ class listfile:
                 do.log_error("Error is Happend")
                 do.log_exception("error is: %s", str(e))
 
+        def do_insert(self,index_point, value ): #(self,2,4)
+            try:
+                do.log("user give %s value", value)
+                self.l[index_point:index_point] = [value]
+                do.log("insert successful, %s value", value)
+                do.log("after insert value list is: %s", self.l)
+
+            except Exception as e:
+                do.log_error("Error is Happend")
+                do.log_exception("error is: %s", str(e))
