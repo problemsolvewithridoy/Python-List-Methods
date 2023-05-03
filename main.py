@@ -87,3 +87,12 @@ class listfile:
             except Exception as e:
                 do.log_error("Error is Happend")
                 do.log_exception("error is: %s", str(e))
+
+        def do_pop(self, value=-1):
+            try:
+                do.log("user want to delete %s value",value)
+                del self.l[value]
+                do.log("value is deleted successfully & after delete list is: %s", self.l)
+            except Exception as e:
+                do.log_error("Error is happend")
+                do.log_exception("error is %s",e)
