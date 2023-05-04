@@ -112,3 +112,13 @@ class listfile:
             except Exception as e:
                 do.log_error("Error is happend")
                 do.log_exception("error is %s", str(e))
+
+        def do_reverse(self):
+            try:
+                do.log("this data give by user: %s and user want to reverse it ", self.l)
+                l = self.l[::-1]
+                do.log("after reverse list is %s", l)
+
+            except Exception as e:
+                do.log_error("Error is Happend")
+                do.log_exception("error is %s", e)
