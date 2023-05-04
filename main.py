@@ -96,3 +96,19 @@ class listfile:
             except Exception as e:
                 do.log_error("Error is happend")
                 do.log_exception("error is %s",e)
+
+        def do_remove(self,value):
+            try:
+                do.log("user want to delete %s value", value)
+                if value in self.l:
+                    for i in range(len(self.l)):
+                        if self.l[i] == value:
+                            del self.l[i]
+                            break
+                    do.log("after remove list is: %s", self.l)
+                else:
+                    raise Exception(f"{value} is not in list")
+
+            except Exception as e:
+                do.log_error("Error is happend")
+                do.log_exception("error is %s", str(e))
