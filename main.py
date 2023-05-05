@@ -122,3 +122,49 @@ class listfile:
             except Exception as e:
                 do.log_error("Error is Happend")
                 do.log_exception("error is %s", e)
+
+        def do_sort(self,key = None, reverse = False ):
+            try:
+                if key != None:
+                    l1 = []
+                    l2 = []
+                    l3 = []
+
+                    for i in self.l:
+                        a = len(i)
+                        l1[len(l1):len(l1)] = [a]
+                    for i in range(len(l1)):
+                        a = min(l1)
+                        l2[len(l2):len(l2)] = [a]
+                        if a in l1:
+                            for i in range(len(l1)):
+                                if l1[i] == a:
+                                    del l1[i]
+                                    break
+                    s = set(l2)
+                    for i in s:
+                        for j in self.l:
+                            if i == len(j):
+                                l3[len(l3):len(l3)] = [j]
+                    self.l = l3
+                    if reverse == True:
+                        self.l = self.l[::-1]
+                        do.log("this is your sort & reverse data: %s", self.l)
+                    else:
+                        do.log("this is your sort data: %s", self.l)
+                else:
+
+                    l1 = []
+                    for i in range(len(self.l)):
+                        a = min(self.l)
+                        l1[len(l1):len(l1)] = [a]
+                        self.l.remove(a)
+                    self.l = l1
+                    if reverse == True:
+                        self.l = self.l[::-1]
+                        do.log("this is your sort & reverse data: %s", self.l)
+                    else:
+                        do.log("this is your sort data: %s", self.l)
+            except Exception as e:
+                do.log_error("Error is Happend")
+                do.log_exception("error is : %s", str(e))
