@@ -168,3 +168,8 @@ class listfile:
             except Exception as e:
                 do.log_error("Error is Happend")
                 do.log_exception("error is : %s", str(e))
+
+
+    except Exception as e:
+        do.log_error("Error is happened")
+        do.log_exception("error is: %s", str(e))
